@@ -1,4 +1,4 @@
-Assignment 2: Binary Search Tree (BST)
+***Assignment 2: Binary Search Tree (BST)***
 
 Implement a Binary Search Tree (BST) in Java with the following operations:
 
