@@ -1,96 +1,10 @@
-# Binary Search Tree (BST) Operations & Performance Analysis
+Assignment 2: Binary Search Tree (BST)
 
-Java implementation of a **Binary Search Tree (BST)** with insertion, traversal, searching, deletion, height calculation, and performance benchmarking.
+Implement a Binary Search Tree (BST) in Java with the following operations:
 
-## Student Details
-
-* **Name:** Subhasis
-
-* **Course:** Advanced Data Structures Lab (M.Tech)
-
----
-
-## Features
-
-* Iterative BST insertion
-* Inorder, Preorder, and Postorder traversal
-* BST search
-* Deletion of:
-
-  * Leaf node
-  * Node with one child
-  * Node with two children
-* Iterative height calculation
-* Performance benchmarking for:
-
-  * Random input
-  * Sorted input
-  * Reverse-sorted input
-* Benchmark sizes: `N = 1000, 5000, 10000`
-
-## Input for Basic Operations
-
-```text
-50, 30, 70, 20, 40, 60, 80, 10
-```
-
-The program performs:
-
-1. Insertion
-2. Tree traversals
-3. Inorder sorted-order verification
-4. Search for an existing key
-5. Search for a missing key
-6. Deletion of leaf, one-child, and two-child nodes
-
-## Implementation Details
-
-* **Insertion:** Iterative, to safely handle highly skewed trees.
-* **Deletion:** Uses the inorder successor for nodes with two children.
-* **Height:** Calculated iteratively to avoid recursion-depth issues.
-* **Traversals:** Inorder, Preorder, and Postorder.
-
-## Performance Results
-
-|     N | Input          | Height | Build (ms) | 1000 Searches (ms) | 500 Deletions (ms) |
-| ----: | -------------- | -----: | ---------: | -----------------: | -----------------: |
-|  1000 | Random         |     22 |       0.85 |               0.28 |               0.19 |
-|  1000 | Sorted         |   1000 |       2.15 |               1.84 |               1.10 |
-|  1000 | Reverse-Sorted |   1000 |       2.05 |               1.80 |               1.08 |
-|  5000 | Random         |     28 |       3.20 |               0.35 |               0.24 |
-|  5000 | Sorted         |   5000 |      28.40 |               8.95 |               5.30 |
-|  5000 | Reverse-Sorted |   5000 |      27.90 |               8.80 |               5.15 |
-| 10000 | Random         |     31 |       7.10 |               0.42 |               0.29 |
-| 10000 | Sorted         |  10000 |     110.20 |              18.20 |              11.40 |
-| 10000 | Reverse-Sorted |  10000 |     108.50 |              17.90 |              11.10 |
-
-> Benchmark times may vary depending on hardware, JVM version, and system load.
-
-## Complexity
-
-| Operation |    Average | Worst Case |
-| --------- | ---------: | ---------: |
-| Search    |   O(log N) |       O(N) |
-| Insert    |   O(log N) |       O(N) |
-| Delete    |   O(log N) |       O(N) |
-| Build     | O(N log N) |      O(N²) |
-
-### Observation
-
-* **Random input:** Produces a relatively balanced tree with smaller height and faster operations.
-* **Sorted input:** Produces a right-skewed tree with height `N`.
-* **Reverse-sorted input:** Produces a left-skewed tree with height `N`.
-* Poor insertion order can therefore reduce a BST to a structure similar to a linked list.
-
-## Compilation & Execution
-
-```bash
-javac BSTLab.java
-java BSTLab
-```
-
-## Conclusion
-
-The experiment demonstrates that **BST performance depends heavily on insertion order**. Random data generally provides good average performance, while sorted and reverse-sorted data can cause the tree to become skewed and operations to degrade from `O(log N)` to `O(N)`.
-
-This limitation is addressed by self-balancing trees such as **AVL Trees** and **Red-Black Trees**.
+Insert and traverse the keys: 50, 30, 70, 20, 40, 60, 80, 10.
+Perform inorder, preorder, and postorder traversals.
+Search for one existing and one non-existing key.
+Delete a leaf node, a node with one child, and a node with two children.
+For N = 1000, 5000, 10000, compare random, sorted, and reverse-sorted inputs based on build time, tree height, search time, and deletion time.
+Analyze how input order affects BST performance.
